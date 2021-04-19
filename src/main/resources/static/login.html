@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
@@ -18,7 +19,7 @@
 
         <div class="container">
             <!-- Login Form start -->
-            <form class="form" id="login" method="POST">
+            <form class="form" id="login" method="POST" th:action="@{/login}">
                 <h1 class="form__title">Login</h1>
                 <div class="form__message form__message--error"></div>
                 <div class="form__input-group">
@@ -31,10 +32,10 @@
                 </div>
                 <button class="form__button" type="submit">Continuar</button>
                 <p class="form__text">
-                    <a class="form__link" href="./" id="linkCreateAccount">Crear cuenta nueva</a>
+                    <a class="form__link" href="./">Crear cuenta nueva</a>
                 </p>
                 <p class="form__text">
-                    <a class="form__link" href="./index.html" id="linkCreateAccount">Regresar</a>
+                    <a class="form__link" href="./index.html">Regresar</a>
                 </p>
             </form>
             <!-- Login Form End -->
@@ -79,3 +80,4 @@
     <script src="./js/login.js"></script>
     <script src="./js/aos.js"></script>
 </body>
+</html>
