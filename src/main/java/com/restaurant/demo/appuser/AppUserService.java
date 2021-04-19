@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class AppUserService implements UserDetailsService {
 
-    private final static String USER_NOT_FOUND_MSG = "user with email %s not found";
+    private final static String USER_NOT_FOUND_MSG = "Usuario %s no se ha encontrado";
     private final UserRepository appUserRepository;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
@@ -28,7 +28,7 @@ public class AppUserService implements UserDetailsService {
                 .isPresent();
 
         if (userExists){
-            throw new IllegalStateException("email already taken");
+            throw new IllegalStateException("Este email ya está registrado");
         }
 
         final String encodedPassword = bCryptPasswordEncoder.encode(appUser.getPassword());
@@ -37,6 +37,6 @@ public class AppUserService implements UserDetailsService {
         appUserRepository.save(appUser);
 
         //TODO: Enviar confirmación y token
-        return "it works";
+        return "El usuario se ha registrado con éxito";
     }
 }
