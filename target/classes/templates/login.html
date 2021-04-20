@@ -4,8 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <title>Nuestro Restaurante Login</title>
-    <link rel="stylesheet" th:href="@{/css/login.css}">
-    <link rel="stylesheet" th:href="@{/css/aos.css}">
+    <link th:href="@{/css/login.css}" rel="stylesheet">
+    <link th:href="@{/css/aos.css}" rel="stylesheet">
 </head>
 <body>
 
@@ -32,10 +32,10 @@
                 </div>
                 <button class="form__button" type="submit">Continuar</button>
                 <p class="form__text">
-                    <a class="form__link" href="./">Crear cuenta nueva</a>
+                    <a class="form__link" href="./" id="linkCreateAccount">Crear cuenta nueva</a>
                 </p>
                 <p class="form__text">
-                    <a class="form__link" href="./index.html">Regresar</a>
+                    <a class="form__link" href="./index.html" id="linkCreateAccount">Regresar</a>
                 </p>
             </form>
             <!-- Login Form End -->
